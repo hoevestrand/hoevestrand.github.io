@@ -321,6 +321,8 @@
 				<h2 class="section-title">
 					Er i glar på puns?!
 				</h2><!-- /.Section-title  -->
+				
+				
 				<p class="section-description">
 				Vi glæder os til at lave <img src="images/puns/aeg.jpg" class="puns-img">-cellent mad til jer <img src="images/puns/dej.jpg" class="puns-img">-lige mennesker. Hos os får i hvert fald ikke  <img src="images/puns/daase.jpg" class="puns-img">-mad! Vi skal i hvert fald nok prøve ikke at <img src="images/puns/skuffe.jpg" class="puns-img"> jer. Men vi  <img src="images/puns/laage.jpg" class="puns-img">-r altså ikke noget! Beklager hvis det  <img src="images/puns/kniv.jpg" class="puns-img">-er med humoren, men det kommer til at  <img src="images/puns/ske.jpg" class="puns-img">
 				</p><!-- /.section-description -->
@@ -334,6 +336,7 @@
 				</div><!-- /.container -->
 			</div><!-- /.pattern -->
 
+		
 		</section><!-- /#subscribe -->
 		<!-- Subscribe Section End -->
 
@@ -345,49 +348,52 @@
 				<div class="container">
 					<h3 class="section-name">
 						<span>
-							Contact
+							Sjov og spas! 
 						</span>
 					</h3><!-- /.section-name -->
 					<h2 class="section-title">
-						Get in Touch 
+						Sjov og spas!
 					</h2><!-- /.Section-title  -->
 					<p class="section-description">
-						Kontakt
+						
 					</p><!-- /.section-description -->
 					
 
 					<!-- -->
-					<form id="contact-form" method="POST" target="_blank">
-						<div class="contact-box-hide">
-							<div class="col-sm-6">
-								<input type="text"  class="form-control" id="first_name" name="first_name" required placeholder="First Name">
-								<span class="first-name-error"></span>
-							</div>
-							<div class="col-sm-6">
-								<input type="text"  class="form-control" id="last_name" name="last_name" required placeholder="Last Name">
-								<span class="last-name-error"></span>
-							</div>
-							<div class="col-sm-6">
-								<input type="email" class="form-control"  id="contact_email" name="_replyto" required placeholder="Email Address">
-								<span class="contact-email-error"></span>
-							</div>
-							<div class="col-sm-6">
-								<input type="text"  class="form-control" id="subject" name="subject" required placeholder="Subject">
-								<span class="contact-subject-error"></span>
-							</div>
-							<div class="col-sm-10">
-								<textarea class="form-control" rows="5" id="message" name="message" required placeholder="Message"></textarea>
-								<span class="contact-message-error"></span>
-							</div>
-							 
-							<div class="col-sm-2">
-								<button id="contact-submit" class="btn custom-btn col-xs-12" type="submit" name="Send"> <i class="fa fa-rocket"></i></button>
-								<span id="contact-loading" class="btn custom-btn col-xs-12"> <i class="fa fa-refresh fa-spin"></i> </span> 	
-							</div>
-						</div><!-- /.contact-box-hide -->
+					<button type="button" class="btn btn-primary btn-lg" onclick="hideforbiddenpic();" data-toggle="modal" data-target="#forbiddenModal" style="background-color: red;">Lad være med at klikke her!</button>
+					<h2>Lav din egen pizza til rusturen! Klik for at tilføje ingredienser!</h2>
+					<div id="PizzaSpil" >
+						<img id="Pizza" src="images/background/pizza.jpg" style="width:500px;height:500px;float:left;"></img>
+						<div class="pp" id="SpilStats" style="float:left;clear:none;width:150px;" >
+							<p style="white-space:nowrap;">Pølser på pizzaen: <span id="pizzascore"></p>
+							</br>
+							<div id="Taberfelt" style="display:none">
+								<p style="color:red">Aad, hvorfor putter du pølser på pizzaen, fuck hvor klamt!! </p>
+							</br>
+							<button type="button" class="btn btn-primary btn-lg" onclick="resetPizzaSpil();" >Prøv igen!</button>
+						</div>
+						</div>
+						
+					</div>		
 
-					</form><!-- /#contact-form -->		
-
+					<!-- Modal -->
+					<div class="modal fade" id="forbiddenModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel" style="color: black;">Du er lidt bad hva!?</h4>
+						  </div>
+						  <div class="modal-body" >
+							<img src="images/background/lort.jpg" style="height:200px;width:200px;"></img>
+							<button type="button" class="btn btn-primary btn-lg"  style="background-color: green;" onclick="fobiddenbuttonclick();">Her skal du overhovedet ikke klikke!</button>
+							<div id="Hundelort">
+							</div>
+						</div>
+					  </div>
+					</div>
 					<div class="next-section">
 						<a class="go-to-page-top"><span></span></a>
 					</div><!-- /.next-section -->
@@ -399,10 +405,83 @@
 			
 		</section><!-- /#contact -->
 		<!-- Contact Section End -->
+		<script>
+		
+		window.onload = setupPizzaSpil;
+		
+		var sausageCounter = 0;
+		var lost = false;
+		
+		function resetPizzaSpil() {
+			var elements = document.getElementsByClassName('poelse');
+			var size = elements.length - 1;
+			for (i = size; i >= 0; i--){
+				elements[i].parentNode.removeChild(elements[i]);
+			}
+			sausageCounter = 0;
+			$('#Taberfelt').hide();
+			document.getElementById("pizzascore").innerHTML = sausageCounter;
+			lost = false;
+		}
+		
+		function setupPizzaSpil(){
+			$('#Pizza').click(function(e) {
+				if (!lost){
+					var elem = document.createElement("img");
+					var style = "position:absolute;top:" + e.pageY + "px;left:" + e.pageX + "px;";
+					elem.setAttribute('height', '50px');
+					elem.setAttribute('width', '50px');
+					elem.setAttribute('style',style);
+					elem.setAttribute('class','poelse');
+					var num = Math.floor(Math.random() * 10) + 1;
+					if (num === 9) {
+						elem.setAttribute('src', 'images/background/lort1.jpg');
+						lost = true;
+						$('#Taberfelt').show();
+					} else {
+						elem.setAttribute('src', 'images/background/salami.jpg');
+					}
+					$('#PizzaSpil').append(elem);
+					
+					sausageCounter++;
+					document.getElementById("pizzascore").innerHTML = sausageCounter;
+				}
+			});
+		}
+		var counter = 0;
+		function fobiddenbuttonclick() {
+			
+			if (counter > 36){
+				counter = 0;
+				hideforbiddenpic();
+			}
+			
+			var elem = document.createElement("img");
+			elem.setAttribute('height', '50px');
+			elem.setAttribute('width', '50px');
+			var num = Math.floor(Math.random() * 100) + 1; 
+			if (num < 50){
+				elem.setAttribute('src', 'images/background/lort1.jpg');
+			} else if (num < 80){
+				elem.setAttribute('src', 'images/background/lort2.jpg');
+			} else if (num < 85){
+				elem.setAttribute('src', 'images/background/bonuslort.jpg');	
+			} else {
+				elem.setAttribute('src', 'images/background/lort3.jpg');
+			}
+			$('#Hundelort').append(elem);
+			counter++;
+		}
+		function hideforbiddenpic(){
+			$('#Hundelort').html("");
+		}
+		</script>
+
 		<audio autoplay loop>
 			<source src="audio/jazz.mp3" type="audio/mp3">
 			Your browser does not support the audio element.
 		</audio>
+
 		<!-- jQuery Library -->
 		<script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
 		<!-- Modernizr js -->
