@@ -75,7 +75,7 @@ a:focus{
 	background-size:cover;
 }
 .pattern{
-	background:rgba(0,0,0,.4) url(../images/pattern.png);
+	background:rgba(0,0,0,.3) url(../images/pattern.png);
 	padding-top:100px;
 }
 .container{
@@ -576,9 +576,12 @@ a:focus{
 }
 .team-container .team-member{
 	max-width:245px;
+	min-height: 230px;
 	margin:auto;
 	position:relative;
 	overflow:hidden;
+	background:rgba(0,0,0,.8)
+
 }
 
 
@@ -878,6 +881,10 @@ form.news-letter .btn:hover{
 	font-size: 1.125em;
 }
 
+.pp{
+	padding-left: 20px;
+	background-color: pink;
+}
 /* 7 - Contact Section End 
 ---------------------------------------------------------------------- */
 
