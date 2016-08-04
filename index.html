@@ -63,6 +63,9 @@
 				<li><a href="#about">Vektorer</a></li>	
 				<li><a href="#subscribe">Madholdet</a></li>	
 				<li><a href="#contact">Kontakt</a></li>		
+				<div style="margin-left:18px; color:white;cursor:pointer;" href="#" onclick="musikButton();" >
+					<i id="mutepic" class="fa fa-volume-up"></i>
+				</div>
 			</ul> <!-- /.nav .navbar-nav -->
 		</nav> <!-- /.navbar-collapse  -->
 	</div><!-- /#main-menu -->
@@ -723,9 +726,22 @@
 		function hideforbiddenpic(){
 			$('#Hundelort').html("");
 		}
+		
+		function musikButton(){
+		var elem = document.getElementById("Musik");
+			if ( elem.paused ){
+				document.getElementById("mutepic").className = "fa fa-volume-up";
+				elem.play();
+			}
+			else {
+				document.getElementById("mutepic").className = "fa fa-volume-off";
+				elem.pause();
+			}
+		}
+
 		</script>
 
-		<audio autoplay loop>
+		<audio id="Musik" autoplay loop>
 			<source src="audio/jazz.mp3" type="audio/mp3">
 			Your browser does not support the audio element.
 		</audio>
