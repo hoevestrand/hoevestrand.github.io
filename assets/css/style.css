@@ -1226,8 +1226,7 @@ background: #00aaff;
 }
 
 .modal-font {
-	text-align:center;
-	text-transform:uppercase;
+	text-shadow: currentColor;
 }
 
 .modal-background{
@@ -1239,8 +1238,9 @@ background: #00aaff;
 	outline: none;
 }
 
+
 @media screen and (min-width: 768px) {
-	.modal-dialog  {width:700px;}
+	.modal-dialog  {width:900px;}
 }
 
 body.modal-open { overflow:inherit; padding-right:inherit !important; }
@@ -1273,3 +1273,8 @@ body.modal-open { overflow:inherit; padding-right:inherit !important; }
 	height: 70px;
 	width: auto;
 }
+
+.modal-member {
+	font-size: 40px;
+}
+
