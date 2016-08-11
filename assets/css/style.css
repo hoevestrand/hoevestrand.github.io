@@ -117,7 +117,7 @@ a:focus{
 	text-align:center;
 	line-height:30px;
 	text-transform: none;
-	font-size: 20px;
+	font-size: 15px;
 }
 .form-control{
 	padding: 6px 30px;
@@ -1240,7 +1240,7 @@ background: #00aaff;
 
 
 @media screen and (min-width: 768px) {
-	.modal-dialog  {width:900px;}
+	.modal-dialog  {width:1000px;}
 }
 
 body.modal-open { overflow:inherit; padding-right:inherit !important; }
