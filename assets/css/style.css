@@ -110,13 +110,14 @@ a:focus{
 	text-align:center;
 	text-transform:uppercase;
 	font-weight:300;
-	font-size:80px;
+	font-size:60px;
 }
 .section-description{
 	font-weight:300;
 	text-align:center;
 	line-height:30px;
 	text-transform: none;
+	font-size: 20px;
 }
 .form-control{
 	padding: 6px 30px;

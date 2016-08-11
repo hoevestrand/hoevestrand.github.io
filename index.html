@@ -63,9 +63,6 @@
 				<li><a href="#about">Vektorer</a></li>	
 				<li><a href="#subscribe">Madholdet</a></li>	
 				<li><a href="#contact">Kontakt</a></li>		
-				<div style="margin-left:18px; color:white;cursor:pointer;" href="#" onclick="musikButton();" >
-					<i id="mutepic" class="fa fa-volume-up"></i>
-				</div>
 			</ul> <!-- /.nav .navbar-nav -->
 		</nav> <!-- /.navbar-collapse  -->
 	</div><!-- /#main-menu -->
@@ -128,14 +125,14 @@
 			<div class="container">
 				<h1 class="section-name">
 					<span>
-						Rusvejledere og Madhold
+						Rusvejledere 
 					</span>
 				</h1><!-- /.section-name -->
 				<h2 class="section-title">
-					De dejlige mennesker
+					Dejlige mennsesker
 				</h2><!-- /.Section-title  -->
 				<p class="section-description">
-					
+					Disse mennesker har knoklet for at I får en alt for fed rustur og dermed den bedst mulig start på DTU! Hyttebumserne sørger bare for mad og dårlige puns og er derfor ikke inkluderet. Klik bare på dem! hæ
 				</p><!-- /.section-description -->
 
 				<div class="team-container">
@@ -149,7 +146,7 @@
 									<figcaption>
 										<p class="member-name"> Knep Ass </p>
 										<p class="designation">
-											Kick Ass
+											Kick Ass tema
 										</p><!-- /.designation -->
 									</figcaption>
 								</figure>
@@ -167,10 +164,10 @@
 									<img src="images/team/pikkie_small.PNG" alt="Team Member">
 									<figcaption>
 										<p class="member-name">
-											Pikki 
+											Pikki Rødstrømpe
 										</p><!-- /.member-name -->
 										<p class="designation">
-											Pikki Langstrømpe
+											Pippi Langstrømpe tema
 										</p><!-- /.designation -->
 
 									</figcaption>
@@ -192,7 +189,7 @@
 											Pussydestroyer96
 										</p><!-- /.member-name -->
 										<p class="designation">
-											Mean Girls
+											Mean Girls tema
 										</p><!-- /.designation -->
 
 									</figcaption>
@@ -361,9 +358,9 @@
 						<div class="modal-content modal-background" >
 							<div class="model-header modal-font">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<p class="modal-member"> Pikki</p>
+								<p class="modal-member"> Pikki Rødstrømpe</p>
 								<p class="designation">
-									Pippi Langstrømpe
+									Pippi Langstrømpe tema
 								</p><!-- /.designation -->
 							</div>
 							<div class="modal-body modal-font" >
@@ -373,7 +370,9 @@
 									</div> 
 									<div class="col-sm-7">
 										<p  class="section-description">
-											Pikki langstrømpe vil gerne invite jer
+											Pikki Rødstrømpe vil gerne invite jer til spas og løjer. 
+
+											Er du stærk??? For det er Pikki altså. Hun er så stærk at hun kan banke 500 stærke mænd på samme tid! Slå den! 
 										</p>
 									</div>
 								</div>
@@ -726,22 +725,9 @@
 		function hideforbiddenpic(){
 			$('#Hundelort').html("");
 		}
-		
-		function musikButton(){
-		var elem = document.getElementById("Musik");
-			if ( elem.paused ){
-				document.getElementById("mutepic").className = "fa fa-volume-up";
-				elem.play();
-			}
-			else {
-				document.getElementById("mutepic").className = "fa fa-volume-off";
-				elem.pause();
-			}
-		}
-
 		</script>
 
-		<audio id="Musik" autoplay loop>
+		<audio autoplay loop>
 			<source src="audio/jazz.mp3" type="audio/mp3">
 			Your browser does not support the audio element.
 		</audio>
