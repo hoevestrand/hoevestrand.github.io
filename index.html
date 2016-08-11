@@ -64,8 +64,8 @@
 				<li><a href="#subscribe">Madholdet</a></li>	
 				<li><a href="#contact">Spas hæ</a></li>		
 				<div style="margin-left:18px; color:white;cursor:pointer;" href="#" onclick="musikButton();" >
- -					<i id="mutepic" class="fa fa-volume-up"></i>
- -				</div>
+ 					<i id="mutepic" class="fa fa-volume-up"></i>
+ 				</div>
 			</ul> <!-- /.nav .navbar-nav -->
 		</nav> <!-- /.navbar-collapse  -->
 	</div><!-- /#main-menu -->
@@ -750,16 +750,16 @@
 		}
 
 		function musikButton(){
- -		var elem = document.getElementById("Musik");
- -			if ( elem.paused ){
- -				document.getElementById("mutepic").className = "fa fa-volume-up";
- -				elem.play();
- -			}
- -			else {
- -				document.getElementById("mutepic").className = "fa fa-volume-off";
- -				elem.pause();
- -			}
- -		}
+ 		var elem = document.getElementById("Musik");
+ 			if ( elem.paused ){
+				document.getElementById("mutepic").className = "fa fa-volume-up";
+ 				elem.play();
+			}
+ 			else {
+ 				document.getElementById("mutepic").className = "fa fa-volume-off";
+ 				elem.pause();
+ 			}
+ 		}
 		</script>
 
 		<audio id="Musik" autoplay loop>
