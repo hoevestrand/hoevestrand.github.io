@@ -474,7 +474,7 @@ a:focus{
 }
 .site-title:before,
 .site-title:after{
-	content:"";
+	/* content:""; */
 	width:100px;
 	height:10px;
 	left:50%;
@@ -884,7 +884,6 @@ form.news-letter .btn:hover{
 
 .pp{
 	padding-left: 20px;
-	background-color: pink;
 }
 /* 7 - Contact Section End 
 ---------------------------------------------------------------------- */
